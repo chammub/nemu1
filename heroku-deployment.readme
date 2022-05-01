@@ -1,0 +1,13 @@
+heroku login
+This will say you to log in to your account. After logging in.  You have to create a remote Heroku repository: 
+
+heroku create -a app-name
+To check that a remote named Heroku has been set for your app do this: 
+
+git remote -v
+And if you already have a repository on Github, you need to run a new remote by running: 
+
+heroku git:remote -a app-name
+Now to deploy your code to Heroku, use the git push command with Heroku: 
+
+git push heroku main
