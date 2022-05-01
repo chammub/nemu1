@@ -1,0 +1,42 @@
+## register new user
+
+GET http://localhost:3000/api/v1/me HTTP/1.1
+
+###
+
+GET http://localhost:3000/api/v1/admin/users HTTP/1.1
+
+###
+
+POST http://localhost:3000/api/v1/login HTTP/1.1
+content-type: application/json
+
+{
+    "email": "admin@admin.com",
+    "password": "admin"
+}
+
+###
+
+POST http://localhost:3000/api/v1/register HTTP/1.1
+content-type: application/json
+
+{
+    "name": "admin",
+    "email": "admin@admin.com",
+    "password": "admin",
+    "role": "admin",
+    "avatar": ""
+}
+
+###
+
+POST http://localhost:3000/api/v1/admin/user/61c705c3b9f2334490766da9 HTTP/1.1
+content-type: application/json
+
+{
+    "name": "admin",
+    "email": "admin@admin.com",
+    "password": "admin",
+    "role": "admin",
+}
