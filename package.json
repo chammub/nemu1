@@ -2,10 +2,14 @@
   "name": "nemu1",
   "version": "0.0.1",
   "private": true,
+  "engines": {
+    "node": "16.x"
+  },
   "scripts": {
     "start": "node api/server.js",
     "dev": "nodemon api/server.js",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false && npm install --prefix frontend && npm run build --prefix frontend"
+    "build": "npm run build --prefix src/admin",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false && npm install --prefix src/admin && npm run build --prefix src/admin"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
@@ -20,5 +24,17 @@
   },
   "devDependencies": {
     "nodemon": "^2.0.15"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/chammub/nemu1"
+  },
+  "keywords": [
+    "node",
+    "heroku",
+    "express",
+    "mongodb",
+    "ui5"
+  ],
+  "license": "MIT"
 }
