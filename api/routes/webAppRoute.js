@@ -4,13 +4,14 @@ const router = express.Router();
 const path = require("path");
 
 // file path
-let srcDir = "";
+let srcDir = "../../src";
+let adminDir = "";
 
 // load build files in production
 if (process.env.NODE_ENV === "DEVELOPMENT") {
-    srcDir = "../../src/admin/webapp"
+    adminDir = `${srcDir}/admin/webapp`;
 } else {
-    srcDir = "../../src/admin/dist";
+    adminDir = `${srcDir}/admin/dist`;
 }
 
 // check authentication & authorization
@@ -29,7 +30,7 @@ router
 router
     .route("/")
     .get((req, res, next) => {
-        return res.sendFile(path.resolve(__dirname, `${srcDir}/index.html`));
+        return res.sendFile(path.resolve(__dirname, `${adminDir}/index.html`));
     })
 
 
